@@ -43,6 +43,9 @@ def clean_data(df):
     # convert column from string to numeric
         categories[column] = pd.to_numeric(categories[column])
 
+    # removing categories[related] when greater than 1
+    categories = categories[categories.related != 2]
+
     # concatenate the original dataframe with the new `categories` dataframe
     df = pd.concat([df, categories], axis=1)
 
