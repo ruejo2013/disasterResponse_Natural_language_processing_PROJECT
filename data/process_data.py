@@ -53,7 +53,7 @@ def clean_data(df):
     df.drop('categories', axis=1, inplace=True)
 
     # drop duplicates
-    df.drop_duplicates(subset=['id'], keep='last', inplace=True)
+    df.drop_duplicates(subset=['message'], keep='last', inplace=True)
 
     # dropping null values on the request column
     df = df[df['request'].notnull()]
